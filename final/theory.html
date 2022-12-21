@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMOTE LABS/Theory</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Shadows Into Light Two'); 
+        @import url('https://fonts.googleapis.com/css?family=Kaushan Script'); 
+        @import url('https://fonts.googleapis.com/css?family=Julius Sans One'); 
+        @import url('https://fonts.googleapis.com/css?family=Dancing Script'); 
+        @import url('https://fonts.googleapis.com/css?family=Edu QLD Beginner'); 
+        @import url('https://fonts.googleapis.com/css?family=Special Elite'); 
+        @import url('https://fonts.googleapis.com/css?family=Mali');
+    </style>
+
+    <link rel="stylesheet" href="theo_instruct.css">
+    <script>
+        function return_home() {
+            location.href = 'experiment.html'
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <button id="Leave_Queue" onclick="return_home()">Home</button>
+    </nav>
+
+    <div class="card" id="fl">
+        <div class="card__inner" id="fl_in">
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h3>REMOTE LABS-DC MOTOR</h3>
+                    </div>
+                    <div class="card__body">
+                        <h3>Aim</h3>
+                        <p class="ai">So the main goal of this is to build a setup where the user is
+                            provided with an interface through which they get to control and
+                            experiment with an actual setup elsewhere.</p><br />
+
+                        <h3>Apparatus</h3>
+                        <p>Motor Driver</p>
+                        <p>WAYH206 ( RPM sensor )</p>
+                        <p>ESP32</p>
+                        <p>PCB</p>
+                        <p>Battery</p><br /><br /><br />
+                        <h class="pro">Procedure</h><br /><br /><br />
+                        <h3>Physics of the Experiment</h3>
+                        <p>The main physics behind the experiment can be summarized as:
+                        <ul><br />
+                            <li>We provide input voltage values via our dashboard.
+                                Thingspeak serves as the interface for this.</li>
+                            <li>We obtain that voltage from Thingspeak and use it to power the motor.</li>
+                            <li>We use the rpm sensor to get the motor driver's rotations per minute value and send it
+                                to the thingspeak field.</li>
+                            <li>We also plot the rpm vs voltage graph to learn about and draw conclusions about the
+                                voltage vs rpm characteristic.</li>
+                        </ul>
+                        </p><br /><br />
+                        
+                        <h3>Observations</h3>
+                        <p>
+                            The main physics behind the experiment can be summarized as:
+                        <ul>
+                            <br />
+                            <li>speed is directly proportional to the input voltage.</li>
+                            <li>The higher the input voltage, the faster the output speed. </li>
+                            <li>The lower the input voltage, the slower the output speed.</li>
+                            <li> We can control the speed independently of torque by
+                                manipulating the supply voltage using a DC motor control unit</li>
+
+
+                        </ul>
+                        </p>
+                        <img src="k1.jpg" height="300px " width="500px">
+                        <figcaption>hardware setup of our project</figcaption></img>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

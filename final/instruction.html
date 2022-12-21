@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMOTE LABS/Instructions</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Shadows Into Light Two'); 
+        @import url('https://fonts.googleapis.com/css?family=Kaushan Script'); 
+        @import url('https://fonts.googleapis.com/css?family=Julius Sans One'); 
+        @import url('https://fonts.googleapis.com/css?family=Dancing Script'); 
+        @import url('https://fonts.googleapis.com/css?family=Edu QLD Beginner'); 
+        @import url('https://fonts.googleapis.com/css?family=Special Elite'); 
+        @import url('https://fonts.googleapis.com/css?family=Mali');
+
+        body {
+            font-family: Arial;
+            /* font-colo */
+            background-image: url('k4.jpeg');
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        p {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+
+    <link rel="stylesheet" href="theo_instruct.css">
+    <script>
+        function return_home() {
+            location.href = 'experiment.html'
+        }
+    </script>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <a id="focal_head" style="left: 250px;" href="#focal">INSTRUCTIONS OF DASHBOARD</a>
+
+        <button id="Leave_Queue" onclick="return_home()">Home</button>
+    </nav>
+   <br>
+   <br><br /><br />
+    <h2></h2>
+    <div class="card__body">
+
+        <h3>Dashboard</h3>
+
+        <p>IT has a form with Enter beside it.WE give user interested voltage here and press the UPload button
+            to upload the value to thingspeak which is used as an interface for
+            communicating betwwen the harware and software in this experiment.
+
+        </p>
+        <p>
+            This page has a timer implemeted with 15 minutes limit.
+            implies every user can stay on this page for just 15 minutes.after 15 minutes the session will be
+            timed out and one would get redirected to the home page of experiments.
+        </p>
+        <p>
+            WE videostream the hardware setup locally (for now) on our page here .It shows with bhow much sped the motor
+            driver is rotating for a given voltage.
+        </p>
+        <p>
+            We have plotted the Voltage vs RPM graph from thingspeak graphs of RPM vs T,Voltage vs T graphs realtime it
+            chnage every 10 sec.
+        </p>
+        <br /><br />
+
+</body>
+
+</html>

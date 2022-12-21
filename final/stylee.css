@@ -1,0 +1,9 @@
+body {
+  font-family: Arial;
+  font-size: 17px;
+  background-image:url('login.jpeg');
+  background-size:cover;
+    background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+  

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="experiment.css" />
+    <title>EXPERIMENTS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        x=0;
+        y=0;
+    </script>
+</head>
+
+<body>
+    
+    <video autoplay muted loop id="myVideo">
+        <source src="BG.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+
+    <div class="container1">
+        <div id="text-block1">          
+            <h2>DC MOTOR</h2>
+            <a href="theory.html" class="button">Theory</a>
+            <a href="instruction.html" class="button">Instructions</a>
+            <a href="simulation.html" class="button">Dashboard</a>
+            <!-- <a class="button" onclick="myFunction()">Dashboard</a> -->
+        </div>
+        
+        <span style="font-size:30px;cursor:pointer" onclick="openNav1()">
+        <img src="k1.jpg" alt="Nature" id="img1"></span>
+        <div id="text-block2">
+            <h2> SOME PROJECT</h2>
+            <a href="#" class="button">Theory</a>
+            <a href="#" class="button">Instructions</a>
+            <a href="#" class="button">Dashboard</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav2()"><img src="k2.jpeg" alt="Nature" id="img2" ></span>
+    </div>
+
+<script>
+  function myFunction() 
+  {
+  alert("Please wait User already logged in!!");
+}
+function openNav1() {
+  if(x==0)
+   {
+    document.getElementById("text-block1").style.display = "block";
+    document.getElementById("img2").style.display = "none";
+    x=1;
+   } 
+else
+{
+    document.getElementById("text-block1").style.display = "none";
+    document.getElementById("img2").style.display = "block";
+  x=0;
+}
+}
+
+function openNav2() {
+  if(y==0)
+   {
+    document.getElementById("text-block2").style.display = "block";
+    document.getElementById("img1").style.display = "none";  
+    document.getElementById("img2").style.bottom = "0vh";  
+    document.getElementById("img2").style.right = "50vh"; 
+    y=1;
+   } 
+else
+{
+    document.getElementById("text-block2").style.display = "none";
+    document.getElementById("img1").style.display = "block";
+    document.getElementById("img2").style.bottom = "49vh";  
+    document.getElementById("img2").style.right = "50vh"; 
+  y=0;
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

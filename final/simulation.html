@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .myPlot {
+      display: flexbox;
+      padding: 10px;
+      margin: auto;
+    }
+  </style>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="sti.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"
+    />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Remote Labs</title>
+  </head>
+
+  <body>
+    <ul>
+      <li>
+        <a class="actives" href="experiment.html"
+          ><font size="+100">Home</font></a
+        >
+      </li>
+      <li style="float: right"><span id="timer"></span></li>
+    </ul>
+    <br />
+    <iframe
+      class="video"
+      src="http://192.168.8.112/"
+      style="padding-top: 10px; padding-left: 150px"
+      name="targetframe"
+      allowTransparency="true"
+      scrolling="no"
+      frameborder="0"
+    >
+    </iframe>
+
+    <div
+      id="myPlot"
+      style="
+        max-width: 500px;
+        float: right;
+        padding-right: 150px;
+        padding-top: 70px;
+      "
+    ></div>
+
+    <script src="graph.js"></script>
+    <br />
+    <br />
+    <br />
+    <center>
+      <form id="myForm">
+        <label for="voltage" style="padding-top: 0px">Enter Level: </label>
+        <input type="number" id="voltage" name="voltage" min="0" /><br />
+      </form>
+      <button onclick="myFunction()">Upload</button>
+    </center>
+    <script src="timer.js"></script>
+    <script>
+      let myWindow;
+
+      function httpGet(theUrl) {
+        let xmlHttpReq = new XMLHttpRequest();
+        xmlHttpReq.open("GET", theUrl, false);
+        xmlHttpReq.send(null);
+        return xmlHttpReq.responseText;
+      }
+      function myFunction() {
+        var y = 0;
+        let x = document.getElementById("myForm").elements[0].value;
+        document.getElementById("myForm").elements[0].value = null;
+        if (x < 0 || x > 12) {
+          alert("Voltage has range of 1 to 12");
+          y = 1;
+        }
+        let loc =
+          "https://api.thingspeak.com/update?api_key=FEPWJ2GRVAVPRWQF&field1=" +
+          x;
+
+        if (y == 0) {
+          console.log(httpGet(loc));
+        }
+      }
+    </script>
+  </body>
+</html>
